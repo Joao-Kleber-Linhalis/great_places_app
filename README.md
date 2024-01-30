@@ -1,6 +1,6 @@
-# great_places_app
 
-# App Flutter - Recursos Nativos
+
+# App Flutter Great Places - Recursos Nativos
 
 Este aplicativo foi desenvolvido como parte do aprendizado em um curso de Flutter, focado em recursos nativos, com ênfase em câmera, mapa e banco de dados.
 
