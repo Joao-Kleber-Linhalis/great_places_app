@@ -15,10 +15,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Places',
       theme: ThemeData(
-        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.amber),
+        progressIndicatorTheme:
+            const ProgressIndicatorThemeData(color: Colors.amber),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.indigo,
           secondary: Colors.amber,
+        ),
+        textTheme: TextTheme(
+          labelLarge: TextStyle(color: Colors.black),
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: false,
@@ -30,5 +34,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
