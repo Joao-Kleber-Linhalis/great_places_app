@@ -18,22 +18,22 @@ class _ImageInputState extends State<ImageInput> {
   File? _storedImage;
 
   _takePicture() async {
-    final ImagePicker _imagePicker = ImagePicker();
-    XFile imageFile = await _imagePicker.pickImage(
+    final ImagePicker _imagePicker = ImagePicker(); //Instancia a api necessária para acessar a camera
+    XFile imageFile = await _imagePicker.pickImage( //acessa a camera e retorna o File da foto tirada
       source: ImageSource.camera,
       maxWidth: 600,
     ) as XFile;
 
     setState(() {
-      _storedImage = File(imageFile.path);
+      _storedImage = File(imageFile.path); //salva o caminho da foto tirada
     });
 
-    final appDir = await syspaths.getApplicationDocumentsDirectory();
-    String fileName = path.basename(_storedImage!.path);
-    final savedImage = await _storedImage!.copy(
+    final appDir = await syspaths.getApplicationDocumentsDirectory(); //pega o diretório do app, no caso o Great_places
+    String fileName = path.basename(_storedImage!.path); //Pega o nome do arquivo da foto tirada
+    final savedImage = await _storedImage!.copy( //copia a foto tirada para dentro do diretório do app
       '${appDir.path}/$fileName',
     );
-    widget.onSelectImage(savedImage);
+    widget.onSelectImage(savedImage); //devolve o path para o novo diretório da foto tirada
   }
 
   @override
