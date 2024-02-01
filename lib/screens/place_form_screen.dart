@@ -23,6 +23,7 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
   }
 
   void _submitForm() {
+    
     if (_titleController.text.isEmpty || _pickedImage == null) return;
 
     Provider.of<GreatPlaces>(context, listen: false).addPlaces(
