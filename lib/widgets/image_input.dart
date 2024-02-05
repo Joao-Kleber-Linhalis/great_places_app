@@ -15,13 +15,13 @@ class ImageInput extends StatefulWidget {
 }
 
 class _ImageInputState extends State<ImageInput> {
+  
   File? _storedImage;
 
   _takePicture() async {
     final ImagePicker _imagePicker = ImagePicker(); //Instancia a api necessária para acessar a camera
     XFile imageFile = await _imagePicker.pickImage( //acessa a camera e retorna o File da foto tirada
       source: ImageSource.camera,
-      maxWidth: 600,
     ) as XFile;
 
     setState(() {
@@ -54,8 +54,8 @@ class _ImageInputState extends State<ImageInput> {
           child: _storedImage != null
               ? Image.file(
                   _storedImage!,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                  width: size.width * 0.5,
+                  fit: BoxFit.fill,
                 )
               : Text("Nenhuma imagem!"),
         ),
