@@ -31,6 +31,10 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Keys
+
+lib/utils/google_api.dart
+
 # Symbolication related
 app.*.symbols
 
